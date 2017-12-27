@@ -3,22 +3,19 @@ class Insertion
   def sort(values)
     final = []
     values.length.times do |index|
-      if final.empty?
-        final << values[0]
-      else
-        final.each_with_index do |number, i|
-          if number > values[index]
-            final.insert((i-1), values[index])
-          elsif number < values[index] && final[i+1].nil?
-            final << values[index]
-          else
-            next
-          end
+      inserted_flag = false
+      final.length.times do |i|
+        if values[index] < final[i]
+          final.insert(i, values[index])
+          inserted_flag = true
+          break
         end
+      end
+      if inserted_flag == false
+        final << values[index]
       end
     end
     final
   end
-
 
 end
