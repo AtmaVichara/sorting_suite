@@ -2,11 +2,12 @@ require 'pry'
 
 
 class MergeSort
+
   def merge_sort(values)
     if values.length < 2
       values
     else
-      middle = (values.length / 2).round
+      mid = (values.length / 2).round
       left = merge_sort(values[0..mid - 1])
       right = merge_sort(values[mid..values.length])
       merge(left, right)
@@ -24,4 +25,5 @@ class MergeSort
     end
     values + left + right
   end
+
 end

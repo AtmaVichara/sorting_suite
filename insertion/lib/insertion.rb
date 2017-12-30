@@ -1,6 +1,7 @@
 class Insertion
 
   def sort(values)
+
     final = []
     values.length.times do |index|
       inserted_flag = false

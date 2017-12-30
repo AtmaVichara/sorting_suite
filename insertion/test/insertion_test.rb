@@ -59,7 +59,7 @@ class InsertionTest < Minitest::Test
     assert_equal values.sort, insertion.sort(values)
   end
 
-  def test_merge_sorts_30_random_integers
+  def test_insertion_sorts_30_random_integers
     insertion = Insertion.new
     values = []
     30.times { values << rand(1..100) }
