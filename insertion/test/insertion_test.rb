@@ -52,6 +52,20 @@ class InsertionTest < Minitest::Test
     assert_equal ["a", "b", "c", "d", "f", "z"], insertion.sort(unsorted_letters)
   end
 
+  def test_insertion_sorts_numbers
+    insertion = Insertion.new
+    values = [1,3,5,6,3,26,7,4,344,67]
+
+    assert_equal values.sort, insertion.sort(values)
+  end
+
+  def test_merge_sorts_30_random_integers
+    insertion = Insertion.new
+    values = []
+    30.times { values << rand(1..100) }
+
+    assert_equal values.sort, insertion.sort(values)
+  end
 
 
 end

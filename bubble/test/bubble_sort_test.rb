@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/bubble_sort.rb'
+require './bubble/lib/bubble_sort.rb'
 
 class BubbleSortTest < Minitest:: Test
 
@@ -15,6 +15,13 @@ class BubbleSortTest < Minitest:: Test
     bubble_sort = BubbleSort.new
 
     assert_equal ["a", "b", "c", "d"], bubble_sort.sort(letters)
+  end
+
+  def test_bubble_sorts_numbers
+    bubble_sort = BubbleSort.new
+    values = [1,3,5,6,3,26,7,4,344,67]
+
+    assert_equal values.sort, bubble_sort.sort(values)
   end
 
 end
